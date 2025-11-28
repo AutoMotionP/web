@@ -1,0 +1,618 @@
+body {
+    zoom: 0.95;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #1a365d;
+    --dark-blue: #0d1b2a;
+    --accent-red: #e53e3e;
+    --light-bg: #f8fafc;
+    --white: #ffffff;
+    --text-dark: #2d3748;
+    --text-light: #718096;
+    --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+    --gradient-accent: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+body {
+    font-family: 'Inter', 'Arial', sans-serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header Moderno */
+header {
+    background: rgba(26, 54, 93, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo h2 {
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #fff 0%, #cbd5e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--accent-red);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-red);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 80%;
+}
+
+/* Hero Section Moderna */
+.hero {
+   /* background: var(--gradient-primary), 
+                url('img/fondomain.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(26, 54, 93, 0.4) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #fff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.cta-button {
+    background: var(--gradient-accent);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+/* Secciones Generales */
+section {
+    padding: 6rem 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-accent);
+    border-radius: 2px;
+}
+
+/* Historia */
+.historia {
+    background: var(--light-bg);
+    position: relative;
+}
+
+.historia::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+}
+
+.historia-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    text-align: justify;
+}
+
+/* Misión, Visión, Valores */
+.mvv {
+    background: var(--white);
+}
+
+.mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.mvv-card {
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border-left: 6px solid var(--accent-red);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mvv-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.mvv-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.mvv-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.mvv-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.mvv-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mvv-card li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    color: var(--text-dark);
+    font-weight: 500;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.mvv-card li:before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--accent-red);
+    font-size: 0.8rem;
+}
+
+.mvv-card li:last-child {
+    border-bottom: none;
+}
+
+/* Propuesta de Valor */
+.propuesta-valor {
+    background: var(--light-bg);
+}
+
+.valor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.valor-item {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--primary-blue);
+    text-align: center;
+}
+
+.valor-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-top-color: var(--accent-red);
+}
+
+.valor-item h4 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.valor-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Certificaciones */
+.certificaciones {
+    background: var(--white);
+}
+
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.cert-card {
+    background: var(--white);
+    padding: 2.5rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.cert-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-blue);
+}
+
+.cert-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.cert-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Mercados */
+.mercados {
+    background: var(--gradient-primary);
+    color: var(--white);
+    position: relative;
+}
+
+.mercados h2 {
+    color: var(--white);
+}
+
+.mercados h2::after {
+    background: var(--accent-red);
+}
+
+.mercados-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    text-align: center;
+}
+
+.origen h3, .destinos h3 {
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.banderas {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.banderas span {
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.banderas span:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Contacto */
+.contacto {
+    background: var(--light-bg);
+}
+
+.contacto h2 {
+    color: var(--primary-blue);
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 4rem;
+    align-items: start;
+}
+
+.contacto-info h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.contacto-info p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    padding: 1rem 1.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background: var(--white);
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
+}
+
+.contacto-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contacto-form button {
+    background: var(--gradient-primary);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contacto-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Footer */
+footer {
+    background: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 0;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    section {
+        padding: 4rem 0;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    .mvv-grid,
+    .valor-grid,
+    .certs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .banderas {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .mvv-card,
+    .valor-item,
+    .cert-card {
+        padding: 2rem 1.5rem;
+    }
+}
