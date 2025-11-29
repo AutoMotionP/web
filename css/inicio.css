@@ -112,8 +112,6 @@ nav {
 
 /* Hero Section Moderna */
 .hero {
-   /* background: var(--gradient-primary), 
-                url('img/fondomain.jpg'); */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -249,7 +247,7 @@ h2::after {
     text-align: justify;
 }
 
-/* Misión, Visión, Valores */
+/* Misión, Visión, Valores CON ÍCONOS */
 .mvv {
     background: var(--white);
 }
@@ -291,6 +289,14 @@ h2::after {
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.mvv-card h3 i {
+    color: var(--accent-red);
+    margin-right: 10px;
+    font-size: 1.8rem;
 }
 
 .mvv-card p {
@@ -309,22 +315,24 @@ h2::after {
     color: var(--text-dark);
     font-weight: 500;
     position: relative;
-    padding-left: 2rem;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
 }
 
-.mvv-card li:before {
-    content: '▶';
-    position: absolute;
-    left: 0;
+.mvv-card li i {
     color: var(--accent-red);
-    font-size: 0.8rem;
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    font-size: 1rem;
 }
 
 .mvv-card li:last-child {
     border-bottom: none;
 }
 
-/* Propuesta de Valor */
+/* Propuesta de Valor CON ÍCONOS */
 .propuesta-valor {
     background: var(--light-bg);
 }
@@ -356,6 +364,17 @@ h2::after {
     margin-bottom: 1rem;
     font-size: 1.3rem;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.valor-item h4 i {
+    color: var(--accent-red);
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 .valor-item p {
@@ -363,26 +382,31 @@ h2::after {
     line-height: 1.6;
 }
 
-/* Certificaciones */
+/* Certificaciones - 5 EN UNA FILA */
 .certificaciones {
     background: var(--white);
 }
 
 .certs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
 }
 
 .cert-card {
     background: var(--white);
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1rem;
     border-radius: var(--border-radius);
     text-align: center;
     box-shadow: var(--shadow-sm);
     border: 2px solid #e2e8f0;
     transition: all 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
 }
 
 .cert-card:hover {
@@ -391,16 +415,24 @@ h2::after {
     border-color: var(--primary-blue);
 }
 
-.cert-card h3 {
+.cert-card i {
+    font-size: 2.5rem;
     color: var(--primary-blue);
     margin-bottom: 1rem;
-    font-size: 1.2rem;
+    display: block;
+}
+
+.cert-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
 .cert-card p {
     color: var(--text-light);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
 }
 
 /* Mercados */
@@ -558,6 +590,13 @@ footer p:last-child {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+    .certs-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -580,9 +619,13 @@ footer p:last-child {
     }
     
     .mvv-grid,
-    .valor-grid,
-    .certs-grid {
+    .valor-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .certs-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
     
     .contacto-grid {
@@ -593,6 +636,18 @@ footer p:last-child {
     .banderas {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .mvv-card h3 i,
+    .valor-item h4 i,
+    .cert-card i {
+        font-size: 1.5rem;
+    }
+    
+    .valor-item h4 {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 15px;
     }
 }
 
@@ -614,5 +669,25 @@ footer p:last-child {
     .valor-item,
     .cert-card {
         padding: 2rem 1.5rem;
+    }
+    
+    .certs-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .cert-card {
+        min-height: 150px;
+        padding: 1.5rem 1rem;
+    }
+    
+    .mvv-card h3 {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .mvv-card h3 i {
+        margin-right: 0;
     }
 }
