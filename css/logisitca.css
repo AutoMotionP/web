@@ -1,0 +1,636 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #1a365d;
+    --dark-blue: #0d1b2a;
+    --accent-red: #e53e3e;
+    --light-bg: #f8fafc;
+    --white: #ffffff;
+    --text-dark: #2d3748;
+    --text-light: #718096;
+    --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+    --gradient-accent: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+body {
+    font-family: 'Inter', 'Arial', sans-serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header */
+header {
+    background: rgba(26, 54, 93, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo h2 {
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, #cbd5e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-red);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 80%;
+}
+
+.nav-links a:hover {
+    color: var(--accent-red);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero Logística */
+.logistica-hero {
+    background: var(--gradient-primary);
+    color: var(--white);
+    text-align: center;
+    padding: 10rem 0 6rem;
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.logistica-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logistica-hero p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Diagrama Flujo */
+.diagrama-flujo {
+    padding: 6rem 0;
+    background: var(--light-bg);
+}
+
+.diagrama-flujo h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.diagrama-flujo h2 i {
+    color: var(--accent-red);
+}
+
+.diagrama-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.diagrama-img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+}
+
+.diagrama-img:hover {
+    transform: scale(1.02);
+}
+
+.flujos-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.flujo-categoria h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.flujo-categoria h3 i {
+    color: var(--accent-red);
+}
+
+.flujo-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.flujo-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 1rem 1.5rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.flujo-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.flujo-item i {
+    color: var(--accent-red);
+    width: 20px;
+    text-align: center;
+}
+
+.flujo-item span {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* Participantes */
+.participantes {
+    padding: 6rem 0;
+    background: var(--white);
+}
+
+.participantes h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.participantes h2 i {
+    color: var(--accent-red);
+}
+
+.participantes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.participante-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--primary-blue);
+}
+
+.participante-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-top-color: var(--accent-red);
+}
+
+.participante-icon {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.participante-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.participante-card ul {
+    list-style: none;
+    text-align: left;
+}
+
+.participante-card li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+    border-bottom: 1px solid #e2e8f0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.participante-card li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-red);
+    font-weight: bold;
+}
+
+.participante-card li:last-child {
+    border-bottom: none;
+}
+
+/* Tecnologías */
+.tecnologias {
+    padding: 6rem 0;
+    background: var(--light-bg);
+}
+
+.tecnologias h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tecnologias h2 i {
+    color: var(--accent-red);
+}
+
+.tecnologias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.tecnologia-item {
+    background: var(--white);
+    padding: 2.5rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.tecnologia-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-blue);
+}
+
+.tecnologia-item i {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.tecnologia-item h4 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.tecnologia-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Explicación */
+.explicacion {
+    padding: 6rem 0;
+    background: var(--white);
+}
+
+.explicacion h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.explicacion h2 i {
+    color: var(--accent-red);
+}
+
+.explicacion-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.texto-explicativo {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.texto-explicativo p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.estadisticas {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.estadistica-item {
+    background: var(--light-bg);
+    padding: 2rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.estadistica-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.estadistica-item i {
+    font-size: 2.5rem;
+    color: var(--accent-red);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.estadistica-item h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.estadistica-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Propuestas Industria 4.0 */
+.propuestas-industria {
+    padding: 6rem 0;
+    background: var(--light-bg);
+}
+
+.propuestas-industria h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.propuestas-industria h2 i {
+    color: var(--accent-red);
+}
+
+.propuestas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.propuesta-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.propuesta-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+}
+
+.propuesta-imagen {
+    height: 200px;
+    overflow: hidden;
+}
+
+.propuesta-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* ← Muestra imagen completa */
+    transition: all 0.3s ease;
+    background: #f8f9fa; /* Fondo por si hay espacios */
+}
+
+.propuesta-card:hover .propuesta-img {
+    transform: scale(1.1);
+}
+
+.propuesta-content {
+    padding: 2.5rem 2rem;
+}
+
+.propuesta-content h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.propuesta-content h3 i {
+    color: var(--accent-red);
+}
+
+.propuesta-content p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.propuesta-content ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.propuesta-content li {
+    padding: 0.5rem 0;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.propuesta-content li i {
+    color: var(--accent-red);
+    font-size: 0.8rem;
+}
+
+.beneficio {
+    background: #f0fff4;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid #38a169;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 0;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .logistica-hero {
+        padding: 8rem 0 4rem;
+    }
+    
+    .logistica-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .diagrama-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .explicacion-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .participantes-grid,
+    .tecnologias-grid,
+    .propuestas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 4rem 0;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .logistica-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .participante-card,
+    .tecnologia-item,
+    .propuesta-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .estadisticas {
+        gap: 1.5rem;
+    }
+}
