@@ -33,61 +33,166 @@
         </div>
     </section>
 
-    <!-- Diagrama Flujo Logístico -->
-    <section class="diagrama-flujo">
+    <!-- Diagrama de Carretera Logística -->
+    <section class="diagrama-carretera">
         <div class="container">
-            <h2><i class="fas fa-project-diagram"></i> Flujo Logístico Integral</h2>
-            <div class="diagrama-content">
-                <div class="diagrama-imagen">
-                    <img src="img/diagrama-logistica.jpg" alt="Diagrama flujo logístico AutoMotion Parts" class="diagrama-img">
-                </div>
-                <div class="flujos-detalle">
-                    <!-- Flujos Físicos -->
-                    <div class="flujo-categoria">
-                        <h3><i class="fas fa-boxes"></i> Flujos Físicos</h3>
-                        <div class="flujo-items">
-                            <div class="flujo-item">
-                                <i class="fas fa-arrow-right"></i>
-                                <span>Materia prima → planta</span>
+            <h2><i class="fas fa-route"></i> Ruta Logística Integral</h2>
+            
+            <!-- Carretera Principal -->
+            <div class="carretera-container">
+                <div class="carretera-linea"></div>
+                
+                <!-- Etapa 1: PLANEACIÓN -->
+                <div class="etapa etapa-1">
+                    <div class="etapa-icono">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="etapa-contenido">
+                        <h3>1. PLANEACIÓN</h3>
+                        <div class="etapa-detalles">
+                            <div class="detalle-item">
+                                <i class="fas fa-calculator"></i>
+                                <span>Análisis de Demanda</span>
                             </div>
-                            <div class="flujo-item">
-                                <i class="fas fa-arrow-right"></i>
-                                <span>Producto terminado → empaque</span>
+                            <div class="detalle-item">
+                                <i class="fas fa-cogs"></i>
+                                <span>Planificación Producción</span>
                             </div>
-                            <div class="flujo-item">
-                                <i class="fas fa-arrow-right"></i>
-                                <span>Caja master → transporte</span>
+                            <div class="detalle-item">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>Planificación Logística</span>
                             </div>
-                            <div class="flujo-item">
-                                <i class="fas fa-arrow-right"></i>
-                                <span>Destino Europa</span>
+                            <div class="detalle-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Gestión de Riesgos</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-certificate"></i>
+                                <span>Cumplimiento Normativo</span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Flujos Informativos -->
-                    <div class="flujo-categoria">
-                        <h3><i class="fas fa-chart-line"></i> Flujos Informativos</h3>
-                        <div class="flujo-items">
-                            <div class="flujo-item">
-                                <i class="fas fa-file-invoice"></i>
-                                <span>Órdenes de compra B2B</span>
+                <!-- Etapa 2: ABASTECIMIENTO -->
+                <div class="etapa etapa-2">
+                    <div class="etapa-icono">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="etapa-contenido">
+                        <h3>2. ABASTECIMIENTO</h3>
+                        <div class="etapa-detalles">
+                            <div class="detalle-item">
+                                <i class="fas fa-warehouse"></i>
+                                <span>Gestión Materia Prima</span>
                             </div>
-                            <div class="flujo-item">
-                                <i class="fas fa-database"></i>
-                                <span>Seguimiento WMS / ERP</span>
+                            <div class="detalle-item">
+                                <i class="fas fa-clipboard-check"></i>
+                                <span>Control de Proveedores</span>
                             </div>
-                            <div class="flujo-item">
-                                <i class="fas fa-qrcode"></i>
-                                <span>Trazabilidad por lote</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etapa 3: PRODUCCIÓN -->
+                <div class="etapa etapa-3">
+                    <div class="etapa-icono">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="etapa-contenido">
+                        <h3>3. PRODUCCIÓN</h3>
+                        <div class="etapa-detalles">
+                            <div class="detalle-item">
+                                <i class="fas fa-bolt"></i>
+                                <span>Línea Ensamblado Eléctrico</span>
                             </div>
-                            <div class="flujo-item">
-                                <i class="fas fa-passport"></i>
-                                <span>Documentos de exportación</span>
+                            <div class="detalle-item">
+                                <i class="fas fa-robot"></i>
+                                <span>Control Calidad 4.0</span>
                             </div>
-                            <div class="flujo-item">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etapa 4: ALMACENAMIENTO -->
+                <div class="etapa etapa-4">
+                    <div class="etapa-icono">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <div class="etapa-contenido">
+                        <h3>4. ALMACENAMIENTO</h3>
+                        <div class="etapa-detalles">
+                            <div class="detalle-item">
+                                <i class="fas fa-truck-loading"></i>
+                                <span>Recepción Producto Terminado</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-box-open"></i>
+                                <span>Empaque Especializado</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-rss"></i>
+                                <span>Gestión RFID + WMS</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-shipping-fast"></i>
+                                <span>Preparación de Pedidos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etapa 5: TRANSPORTE -->
+                <div class="etapa etapa-5">
+                    <div class="etapa-icono">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="etapa-contenido">
+                        <h3>5. TRANSPORTE</h3>
+                        <div class="etapa-detalles">
+                            <div class="detalle-item">
+                                <i class="fas fa-truck"></i>
+                                <span>Transporte Nacional</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-globe-americas"></i>
+                                <span>Gestión Forwarder</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-plane"></i>
+                                <span>Transporte Internacional</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-flag-europe"></i>
+                                <span>Distribución Europa</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-satellite-dish"></i>
+                                <span>Monitoreo 4.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etapa 6: CLIENTE -->
+                <div class="etapa etapa-6">
+                    <div class="etapa-icono">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="etapa-contenido">
+                        <h3>6. CLIENTE</h3>
+                        <div class="etapa-detalles">
+                            <div class="detalle-item">
                                 <i class="fas fa-check-circle"></i>
-                                <span>Confirmación de entrega</span>
+                                <span>Entrega Final</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-clipboard-list"></i>
+                                <span>Confirmación y Validación</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Gestión Post-Venta</span>
                             </div>
                         </div>
                     </div>
@@ -96,13 +201,107 @@
         </div>
     </section>
 
-    <!-- Participantes -->
-    <section class="participantes">
+    <!-- Flujos Físicos e Informativos -->
+    <section class="flujos-detallados">
         <div class="container">
-            <h2><i class="fas fa-users"></i> Participantes en la Cadena</h2>
-            <div class="participantes-grid">
-                <div class="participante-card">
-                    <div class="participante-icon">
+            <h2><i class="fas fa-exchange-alt"></i> Flujos del Proceso</h2>
+            <div class="flujos-grid">
+                <!-- Flujos Físicos -->
+                <div class="flujo-categoria">
+                    <div class="flujo-header">
+                        <i class="fas fa-boxes"></i>
+                        <h3>Flujos Físicos</h3>
+                    </div>
+                    <div class="flujo-proceso">
+                        <div class="proceso-paso">
+                            <div class="paso-icono">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="paso-texto">
+                                <strong>Materia prima</strong>
+                                <span>→ planta</span>
+                            </div>
+                        </div>
+                        <div class="proceso-flecha">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="proceso-paso">
+                            <div class="paso-icono">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="paso-texto">
+                                <strong>Producto terminado</strong>
+                                <span>→ empaque</span>
+                            </div>
+                        </div>
+                        <div class="proceso-flecha">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="proceso-paso">
+                            <div class="paso-icono">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <div class="paso-texto">
+                                <strong>Caja master</strong>
+                                <span>→ transporte</span>
+                            </div>
+                        </div>
+                        <div class="proceso-flecha">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="proceso-paso">
+                            <div class="paso-icono">
+                                <i class="fas fa-flag-checkered"></i>
+                            </div>
+                            <div class="paso-texto">
+                                <strong>Destino</strong>
+                                <span>Europa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flujos Informativos -->
+                <div class="flujo-categoria">
+                    <div class="flujo-header">
+                        <i class="fas fa-chart-network"></i>
+                        <h3>Flujos Informativos</h3>
+                    </div>
+                    <div class="flujo-lista">
+                        <div class="info-item">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Órdenes de compra B2B</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-database"></i>
+                            <span>Seguimiento WMS / ERP</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-qrcode"></i>
+                            <span>Trazabilidad por lote</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-passport"></i>
+                            <span>Documentos de exportación</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-check-double"></i>
+                            <span>Confirmación de entrega</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Participantes Simétricos -->
+    <section class="participantes-simetricos">
+        <div class="container">
+            <h2><i class="fas fa-network-wired"></i> Participantes en la Cadena</h2>
+            <div class="participantes-grid-simetrico">
+                <!-- Fila 1 -->
+                <div class="participante-card-sim">
+                    <div class="participante-icono-sim">
                         <i class="fas fa-industry"></i>
                     </div>
                     <h3>Proveedores</h3>
@@ -113,8 +312,8 @@
                         <li>Microcontroladores</li>
                     </ul>
                 </div>
-                <div class="participante-card">
-                    <div class="participante-icon">
+                <div class="participante-card-sim">
+                    <div class="participante-icono-sim">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>AutoMotion Parts</h3>
@@ -125,8 +324,10 @@
                         <li>Control de inventario</li>
                     </ul>
                 </div>
-                <div class="participante-card">
-                    <div class="participante-icon">
+
+                <!-- Fila 2 -->
+                <div class="participante-card-sim">
+                    <div class="participante-icono-sim">
                         <i class="fas fa-truck"></i>
                     </div>
                     <h3>Transportistas</h3>
@@ -137,8 +338,8 @@
                         <li>Logística internacional</li>
                     </ul>
                 </div>
-                <div class="participante-card">
-                    <div class="participante-icon">
+                <div class="participante-card-sim">
+                    <div class="participante-icono-sim">
                         <i class="fas fa-building"></i>
                     </div>
                     <h3>Clientes</h3>
@@ -219,66 +420,66 @@
         </div>
     </section>
 
-  <!-- Propuestas Industria 4.0 -->
-<section class="propuestas-industria">
-    <div class="container">
-        <h2><i class="fas fa-robot"></i> Propuestas de Mejora - Industria 4.0</h2>
-        <div class="propuestas-grid">
-            <!-- RFID + WMS -->
-            <div class="propuesta-card">
-                <div class="propuesta-imagen">
-                    <img src="img/rfdi.jpg" alt="Implementación RFID" class="propuesta-img">
-                </div>
-                <div class="propuesta-content">
-                    <h3><i class="fas fa-rss"></i> RFID + WMS Inteligente</h3>
-                    <p>Etiquetas RFID en cada caja master y producto para:</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Trazabilidad en tiempo real</li>
-                        <li><i class="fas fa-check"></i> Inventarios automáticos</li>
-                        <li><i class="fas fa-check"></i> Reducción de errores en exportación</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Visión Artificial -->
-            <div class="propuesta-card">
-                <div class="propuesta-imagen">
-                    <img src="img/visionL.jpg" alt="Visión artificial" class="propuesta-img">
-                </div>
-                <div class="propuesta-content">
-                    <h3><i class="fas fa-eye"></i> Inspección Automática</h3>
-                    <p>Cámaras industriales para validar:</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Correcta conexión del arnés</li>
-                        <li><i class="fas fa-check"></i> Verificación de soldaduras</li>
-                        <li><i class="fas fa-check"></i> Integridad del sensor ABS</li>
-                        <li><i class="fas fa-check"></i> Lectura automática de etiquetas</li>
-                    </ul>
-                    <p class="beneficio">Reduce scrap y mejora el control de calidad</p>
-                </div>
-            </div>
-
-            <!-- Digital Twin - FOTO AL LADO -->
-            <div class="propuesta-con-imagen-lateral">
-                <div class="propuesta-card-sin-foto">
+    <!-- Propuestas Industria 4.0 -->
+    <section class="propuestas-industria">
+        <div class="container">
+            <h2><i class="fas fa-robot"></i> Propuestas de Mejora - Industria 4.0</h2>
+            <div class="propuestas-grid">
+                <!-- RFID + WMS -->
+                <div class="propuesta-card">
+                    <div class="propuesta-imagen">
+                        <img src="img/rfdi.jpg" alt="Implementación RFID" class="propuesta-img">
+                    </div>
                     <div class="propuesta-content">
-                        <h3><i class="fas fa-project-diagram"></i> Digital Twin (Gemelo Digital)</h3>
-                        <p>Modelo digital del proceso logístico para simular y optimizar:</p>
+                        <h3><i class="fas fa-rss"></i> RFID + WMS Inteligente</h3>
+                        <p>Etiquetas RFID en cada caja master y producto para:</p>
                         <ul>
-                            <li><i class="fas fa-check"></i> Capacidad de producción y tiempos</li>
-                            <li><i class="fas fa-check"></i> Saturación y flujo del almacén</li>
-                            <li><i class="fas fa-check"></i> Rutas de exportación (CIF)</li>
-                            <li><i class="fas fa-check"></i> Costos logísticos y métricas en tiempo real</li>
+                            <li><i class="fas fa-check"></i> Trazabilidad en tiempo real</li>
+                            <li><i class="fas fa-check"></i> Inventarios automáticos</li>
+                            <li><i class="fas fa-check"></i> Reducción de errores en exportación</li>
                         </ul>
                     </div>
                 </div>
-                <div class="imagen-lateral">
-                    <img src="img/digitalL.jpg" alt="Gemelo Digital" class="lateral-img">
+
+                <!-- Visión Artificial -->
+                <div class="propuesta-card">
+                    <div class="propuesta-imagen">
+                        <img src="img/visionL.jpg" alt="Visión artificial" class="propuesta-img">
+                    </div>
+                    <div class="propuesta-content">
+                        <h3><i class="fas fa-eye"></i> Inspección Automática</h3>
+                        <p>Cámaras industriales para validar:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Correcta conexión del arnés</li>
+                            <li><i class="fas fa-check"></i> Verificación de soldaduras</li>
+                            <li><i class="fas fa-check"></i> Integridad del sensor ABS</li>
+                            <li><i class="fas fa-check"></i> Lectura automática de etiquetas</li>
+                        </ul>
+                        <p class="beneficio">Reduce scrap y mejora el control de calidad</p>
+                    </div>
+                </div>
+
+                <!-- Digital Twin - FOTO AL LADO -->
+                <div class="propuesta-con-imagen-lateral">
+                    <div class="propuesta-card-sin-foto">
+                        <div class="propuesta-content">
+                            <h3><i class="fas fa-project-diagram"></i> Digital Twin (Gemelo Digital)</h3>
+                            <p>Modelo digital del proceso logístico para simular y optimizar:</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Capacidad de producción y tiempos</li>
+                                <li><i class="fas fa-check"></i> Saturación y flujo del almacén</li>
+                                <li><i class="fas fa-check"></i> Rutas de exportación (CIF)</li>
+                                <li><i class="fas fa-check"></i> Costos logísticos y métricas en tiempo real</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="imagen-lateral">
+                        <img src="img/digitalL.jpg" alt="Gemelo Digital" class="lateral-img">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <footer>
         <div class="container">

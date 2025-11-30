@@ -135,106 +135,14 @@ nav {
     font-weight: 300;
 }
 
-/* Diagrama Flujo */
-.diagrama-flujo {
+/* Diagrama de Carretera */
+.diagrama-carretera {
     padding: 6rem 0;
     background: var(--light-bg);
+    position: relative;
 }
 
-.diagrama-flujo h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--primary-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.diagrama-flujo h2 i {
-    color: var(--accent-red);
-}
-
-.diagrama-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-}
-
-.diagrama-img {
-    width: 100%;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-lg);
-    transition: all 0.3s ease;
-}
-
-.diagrama-img:hover {
-    transform: scale(1.02);
-}
-
-.flujos-detalle {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-}
-
-.flujo-categoria h3 {
-    color: var(--primary-blue);
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.flujo-categoria h3 i {
-    color: var(--accent-red);
-}
-
-.flujo-items {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.flujo-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 1rem 1.5rem;
-    background: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-}
-
-.flujo-item:hover {
-    transform: translateX(10px);
-    box-shadow: var(--shadow-md);
-}
-
-.flujo-item i {
-    color: var(--accent-red);
-    width: 20px;
-    text-align: center;
-}
-
-.flujo-item span {
-    color: var(--text-dark);
-    font-weight: 500;
-}
-
-/* Participantes */
-.participantes {
-    padding: 6rem 0;
-    background: var(--white);
-}
-
-.participantes h2 {
+.diagrama-carretera h2 {
     text-align: center;
     margin-bottom: 4rem;
     font-size: 2.8rem;
@@ -246,19 +154,341 @@ nav {
     gap: 15px;
 }
 
-.participantes h2 i {
+.diagrama-carretera h2 i {
     color: var(--accent-red);
 }
 
-.participantes-grid {
+.carretera-container {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.carretera-linea {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--primary-blue) 0%, 
+        var(--accent-red) 50%, 
+        #38a169 100%);
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: 2px;
+}
+
+.carretera-linea::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 10px,
+        var(--white) 10px,
+        var(--white) 20px
+    );
+    transform: translateY(-50%);
+}
+
+.etapa {
+    position: relative;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    z-index: 2;
+}
+
+.etapa:nth-child(odd) {
+    flex-direction: row;
+}
+
+.etapa:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.etapa-icono {
+    width: 80px;
+    height: 80px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    border: 4px solid var(--primary-blue);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.etapa:hover .etapa-icono {
+    transform: scale(1.1);
+    border-color: var(--accent-red);
+    box-shadow: 0 10px 25px rgba(229, 62, 62, 0.3);
+}
+
+.etapa-icono i {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    transition: all 0.3s ease;
+}
+
+.etapa:hover .etapa-icono i {
+    color: var(--accent-red);
+}
+
+.etapa-contenido {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    flex: 1;
+    border-left: 6px solid var(--primary-blue);
+    transition: all 0.3s ease;
+}
+
+.etapa:hover .etapa-contenido {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--accent-red);
+}
+
+.etapa-contenido h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.etapa-detalles {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.detalle-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 1rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.detalle-item:hover {
+    background: var(--primary-blue);
+    transform: translateX(5px);
+}
+
+.detalle-item:hover i,
+.detalle-item:hover span {
+    color: var(--white);
+}
+
+.detalle-item i {
+    color: var(--accent-red);
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.detalle-item span {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Flujos Detallados */
+.flujos-detallados {
+    padding: 6rem 0;
+    background: var(--white);
+}
+
+.flujos-detallados h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.flujos-detallados h2 i {
+    color: var(--accent-red);
+}
+
+.flujos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.flujo-categoria {
+    background: var(--light-bg);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.flujo-categoria:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.flujo-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-blue);
+}
+
+.flujo-header i {
+    font-size: 2.5rem;
+    color: var(--accent-red);
+}
+
+.flujo-header h3 {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Flujo Físico - Proceso Horizontal */
+.flujo-proceso {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.proceso-paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    flex: 1;
+}
+
+.paso-icono {
+    width: 60px;
+    height: 60px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid var(--primary-blue);
+}
+
+.paso-icono i {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+.paso-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.paso-texto strong {
+    color: var(--primary-blue);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.paso-texto span {
+    color: var(--text-light);
+    font-size: 0.7rem;
+}
+
+.proceso-flecha {
+    color: var(--accent-red);
+    font-size: 1.2rem;
+}
+
+/* Flujo Informativo - Lista Vertical */
+.flujo-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 1rem 1.5rem;
+    background: var(--white);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-sm);
+}
+
+.info-item i {
+    color: var(--accent-red);
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+}
+
+.info-item span {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* Participantes Simétricos */
+.participantes-simetricos {
+    padding: 6rem 0;
+    background: var(--light-bg);
+}
+
+.participantes-simetricos h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.participantes-simetricos h2 i {
+    color: var(--accent-red);
+}
+
+.participantes-grid-simetrico {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
 }
 
-.participante-card {
+.participante-card-sim {
     background: var(--white);
-    padding: 2.5rem 2rem;
+    padding: 3rem 2.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
     text-align: center;
@@ -266,54 +496,157 @@ nav {
     border-top: 4px solid var(--primary-blue);
 }
 
-.participante-card:hover {
+.participante-card-sim:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
     border-top-color: var(--accent-red);
 }
 
-.participante-icon {
-    font-size: 3rem;
+.participante-icono-sim {
+    font-size: 3.5rem;
     color: var(--primary-blue);
     margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
 }
 
-.participante-card h3 {
+.participante-card-sim:hover .participante-icono-sim {
+    color: var(--accent-red);
+    transform: scale(1.1);
+}
+
+.participante-card-sim h3 {
     color: var(--primary-blue);
     margin-bottom: 1.5rem;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
-.participante-card ul {
+.participante-card-sim ul {
     list-style: none;
-    text-align: left;
+    text-align: center;
 }
 
-.participante-card li {
-    padding: 0.5rem 0;
+.participante-card-sim li {
+    padding: 0.6rem 0;
     color: var(--text-light);
     border-bottom: 1px solid #e2e8f0;
     position: relative;
-    padding-left: 1.5rem;
 }
 
-.participante-card li:before {
+.participante-card-sim li:before {
     content: '•';
     position: absolute;
-    left: 0;
+    left: -15px;
     color: var(--accent-red);
     font-weight: bold;
 }
 
-.participante-card li:last-child {
+.participante-card-sim li:last-child {
     border-bottom: none;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 0;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .logistica-hero {
+        padding: 8rem 0 4rem;
+    }
+    
+    .logistica-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .carretera-linea {
+        display: none;
+    }
+    
+    .etapa {
+        flex-direction: column !important;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    .etapa-detalles {
+        grid-template-columns: 1fr;
+    }
+    
+    .flujos-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .flujo-proceso {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .proceso-flecha {
+        transform: rotate(90deg);
+    }
+    
+    .participantes-grid-simetrico {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 4rem 0;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .logistica-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .etapa-contenido,
+    .flujo-categoria,
+    .participante-card-sim {
+        padding: 2rem 1.5rem;
+    }
+    
+    .etapa-icono {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .etapa-icono i {
+        font-size: 1.8rem;
+    }
 }
 
 /* Tecnologías */
 .tecnologias {
     padding: 6rem 0;
-    background: var(--light-bg);
+    background: var(--white);
 }
 
 .tecnologias h2 {
@@ -376,7 +709,7 @@ nav {
 /* Explicación */
 .explicacion {
     padding: 6rem 0;
-    background: var(--white);
+    background: var(--light-bg);
 }
 
 .explicacion h2 {
@@ -420,7 +753,7 @@ nav {
 }
 
 .estadistica-item {
-    background: var(--light-bg);
+    background: var(--white);
     padding: 2rem 1.5rem;
     border-radius: var(--border-radius);
     text-align: center;
@@ -452,10 +785,10 @@ nav {
     font-size: 0.9rem;
 }
 
-/* Propuestas Industria 4.0 - VERSIÓN DEFINITIVA */
+/* Propuestas Industria 4.0 */
 .propuestas-industria {
     padding: 6rem 0;
-    background: var(--light-bg);
+    background: var(--white);
 }
 
 .propuestas-industria h2 {
@@ -641,115 +974,4 @@ nav {
 
 .imagen-lateral:hover .lateral-img {
     transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    background: var(--dark-blue);
-    color: var(--white);
-    text-align: center;
-    padding: 3rem 0;
-}
-
-footer p {
-    margin-bottom: 0.5rem;
-    opacity: 0.8;
-}
-
-footer p:last-child {
-    margin-bottom: 0;
-    opacity: 0.6;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .logistica-hero {
-        padding: 8rem 0 4rem;
-    }
-    
-    .logistica-hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .diagrama-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .explicacion-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .participantes-grid,
-    .tecnologias-grid,
-    .propuestas-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    section {
-        padding: 4rem 0;
-    }
-    
-    h2 {
-        font-size: 2.2rem;
-    }
-    
-    .propuesta-imagen {
-        min-height: 180px;
-        max-height: 220px;
-        padding: 1rem;
-    }
-    
-    /* Responsive para imagen lateral */
-    .propuesta-con-imagen-lateral {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .propuesta-card-sin-foto {
-        padding: 2rem 1.5rem;
-    }
-    
-    .imagen-lateral {
-        min-height: 250px;
-        order: -1;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 1rem;
-    }
-    
-    .logistica-hero h1 {
-        font-size: 2rem;
-    }
-    
-    .participante-card,
-    .tecnologia-item,
-    .propuesta-content {
-        padding: 2rem 1.5rem;
-    }
-    
-    .estadisticas {
-        gap: 1.5rem;
-    }
-    
-    .propuesta-imagen {
-        min-height: 160px;
-        max-height: 200px;
-    }
-    
-    .propuesta-content {
-        padding: 2rem 1.5rem;
-    }
-    
-    .imagen-lateral {
-        min-height: 200px;
-    }
 }

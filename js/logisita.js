@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Animaciones al hacer scroll
+    // Animaciones al hacer scroll para el diagrama de carretera
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -37,17 +37,26 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                
+                // Animación escalonada para las etapas
+                if (entry.target.classList.contains('etapa')) {
+                    const delay = Array.from(document.querySelectorAll('.etapa')).indexOf(entry.target) * 200;
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, delay);
+                }
             }
         });
     }, observerOptions);
 
-    // Aplicar animaciones a varios elementos
+    // Aplicar animaciones
     const elementsToAnimate = [
-        '.participante-card',
-        '.tecnologia-item',
-        '.propuesta-card',
-        '.flujo-item',
-        '.estadistica-item'
+        '.etapa',
+        '.flujo-categoria',
+        '.participante-card-sim',
+        '.info-item',
+        '.detalle-item'
     ];
 
     elementsToAnimate.forEach(selector => {
@@ -57,5 +66,16 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(element);
         });
+    });
+
+    // Efecto parallax para la carretera
+    window.addEventListener('scroll', function() {
+        const carretera = document.querySelector('.carretera-linea');
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        
+        if (carretera) {
+            carretera.style.transform = `translateY(-50%) translateX(${rate}px)`;
+        }
     });
 });
