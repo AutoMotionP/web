@@ -1,3 +1,7 @@
+body {
+    zoom: 0.89;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -448,7 +452,7 @@ nav {
     font-size: 0.9rem;
 }
 
-/* Propuestas Industria 4.0 */
+/* Propuestas Industria 4.0 - VERSIÓN DEFINITIVA */
 .propuestas-industria {
     padding: 6rem 0;
     background: var(--light-bg);
@@ -482,6 +486,8 @@ nav {
     box-shadow: var(--shadow-lg);
     overflow: hidden;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .propuesta-card:hover {
@@ -490,24 +496,55 @@ nav {
 }
 
 .propuesta-imagen {
-    height: 200px;
+    flex: 0 0 auto;
+    min-height: 200px;
+    max-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-bg);
+    padding: 1.5rem;
     overflow: hidden;
+    position: relative;
+}
+
+.propuesta-imagen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 .propuesta-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* ← Muestra imagen completa */
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
     transition: all 0.3s ease;
-    background: #f8f9fa; /* Fondo por si hay espacios */
 }
 
 .propuesta-card:hover .propuesta-img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .propuesta-content {
     padding: 2.5rem 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .propuesta-content h3 {
@@ -528,6 +565,7 @@ nav {
     color: var(--text-light);
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    flex: 1;
 }
 
 .propuesta-content ul {
@@ -555,7 +593,54 @@ nav {
     border-left: 4px solid #38a169;
     font-style: italic;
     color: var(--text-dark);
-    margin-top: 1rem;
+    margin-top: auto;
+}
+
+/* Estilos para propuesta con imagen al lado */
+.propuesta-con-imagen-lateral {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.propuesta-card-sin-foto {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    padding: 3rem;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.propuesta-card-sin-foto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+}
+
+.imagen-lateral {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    height: 100%;
+    min-height: 300px;
+}
+
+.lateral-img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.imagen-lateral:hover .lateral-img {
+    transform: scale(1.05);
 }
 
 /* Footer */
@@ -613,6 +698,27 @@ footer p:last-child {
     h2 {
         font-size: 2.2rem;
     }
+    
+    .propuesta-imagen {
+        min-height: 180px;
+        max-height: 220px;
+        padding: 1rem;
+    }
+    
+    /* Responsive para imagen lateral */
+    .propuesta-con-imagen-lateral {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .propuesta-card-sin-foto {
+        padding: 2rem 1.5rem;
+    }
+    
+    .imagen-lateral {
+        min-height: 250px;
+        order: -1;
+    }
 }
 
 @media (max-width: 480px) {
@@ -632,5 +738,18 @@ footer p:last-child {
     
     .estadisticas {
         gap: 1.5rem;
+    }
+    
+    .propuesta-imagen {
+        min-height: 160px;
+        max-height: 200px;
+    }
+    
+    .propuesta-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .imagen-lateral {
+        min-height: 200px;
     }
 }
