@@ -1,108 +1,104 @@
-// Datos de los productos
+// Datos de los productos - ACTUALIZADO
 const productosData = {
     arnes: {
         titulo: "ARNÉS AUTOMOTRIZ",
-        descripcion: "Fabricamos arneses para la distribución de energía y señales en el vehículo, para autos ligeros, SUVs y vehículos comerciales",
+        descripcion: "Sistemas de cableado premium para distribución de energía y señales en vehículos ligeros, SUVs y comerciales",
         imagen: "img/arnes.jpg",
         especificaciones: [
-            { titulo: "Material del conductor", descripcion: "Cobre automotriz" },
-            { titulo: "Aislamiento", descripcion: "PVC automotriz, resistente hasta 105°C" },
-            { titulo: "Longitud estándar", descripcion: "1.5 m - 2.0 m" },
-            { titulo: "Temperatura de operación", descripcion: "-40 °C a 120 °C" },
-            { titulo: "Protección", descripcion: "Enfundado corrugado + cinta textil" },
-            { titulo: "Conectores", descripcion: "Termoplásticos OEM" },
-            { titulo: "Resistencia dieléctrica", descripcion: "> 1,500 V" },
-            { titulo: "Vida útil estimada", descripcion: "> 10 años" }
+            { titulo: "Material del conductor", descripcion: "Cobre automotriz de alta pureza", icono: "fas fa-bolt" },
+            { titulo: "Aislamiento", descripcion: "PVC automotriz, resistente hasta 105°C", icono: "fas fa-shield-alt" },
+            { titulo: "Longitud estándar", descripcion: "1.5 m - 2.0 m personalizable", icono: "fas fa-ruler" },
+            { titulo: "Temperatura de operación", descripcion: "-40 °C a 120 °C", icono: "fas fa-thermometer-half" },
+            { titulo: "Protección", descripcion: "Enfundado corrugado + cinta textil", icono: "fas fa-hard-hat" },
+            { titulo: "Conectores", descripcion: "Termoplásticos OEM certificados", icono: "fas fa-plug" },
+            { titulo: "Resistencia dieléctrica", descripcion: "> 1,500 V", icono: "fas fa-bolt" },
+            { titulo: "Vida útil estimada", descripcion: "> 10 años o 150,000 km", icono: "fas fa-calendar-check" }
         ],
         aplicaciones: [
-            { titulo: "Autos Ligeros", descripcion: "Sistemas completos de cableado" },
-            { titulo: "SUVs", descripcion: "Soluciones robustas para terrenos variados" },
-            { titulo: "Vehículos Comerciales", descripcion: "Arneses de alta durabilidad" }
+            { titulo: "Autos Ligeros", descripcion: "Sistemas completos de cableado para sedanes y hatchbacks" },
+            { titulo: "SUVs", descripcion: "Soluciones robustas para terrenos variados y condiciones extremas" },
+            { titulo: "Vehículos Comerciales", descripcion: "Arneses de alta durabilidad para flotas comerciales" }
         ]
     },
     sensor: {
         titulo: "SENSOR ABS",
-        descripcion: "Fabricamos sensores inductivos o activos diseñados para medir la velocidad de rotación de las ruedas, compatible con sistemas ABS en vehículos automotrices.",
+        descripcion: "Sensores de velocidad de rueda de alta precisión para sistemas de frenado antibloqueo en vehículos modernos",
         imagen: "img/sensorabs.jpeg",
         especificaciones: [
-            { titulo: "Tipo de sensor", descripcion: "Inductivo o activo" },
-            { titulo: "Carcasa", descripcion: "Plástico, grado de protección IP67" },
-            { titulo: "Longitud del cable", descripcion: "45 - 70 cm" },
-            { titulo: "Voltaje de Operacion", descripcion: "4.5 - 12 V" },
-            { titulo: "Temperatura de Operacion", descripcion: "-40 °C a 150 °C" },
-            { titulo: "Señal de salida", descripcion: "AC (para inductivo) o digital (para activo)" },
-            { titulo: "Conector", descripcion: " 2 o 3 pines tipo OEM" },
-            { titulo: "Frecuencia / Señal", descripcion: " Variable según RPM" }
+            { titulo: "Tipo de sensor", descripcion: "Inductivo o activo según aplicación", icono: "fas fa-wave-square" },
+            { titulo: "Carcasa", descripcion: "Plástico automotriz, grado IP67", icono: "fas fa-cube" },
+            { titulo: "Longitud del cable", descripcion: "45 - 70 cm estándar", icono: "fas fa-ruler" },
+            { titulo: "Voltaje de Operación", descripcion: "4.5 - 12 V DC", icono: "fas fa-battery-half" },
+            { titulo: "Temperatura de Operación", descripcion: "-40 °C a 150 °C", icono: "fas fa-thermometer-full" },
+            { titulo: "Señal de salida", descripcion: "AC (inductivo) o digital (activo)", icono: "fas fa-signal" },
+            { titulo: "Conector", descripcion: "2 o 3 pines tipo OEM", icono: "fas fa-plug" },
+            { titulo: "Frecuencia / Señal", descripcion: "Variable según RPM del vehículo", icono: "fas fa-tachometer-alt" }
         ],
         aplicaciones: [
-            { titulo: "Sistemas ABS", descripcion: "Detección de velocidad de rueda" },
-            { titulo: "Control de tracción", descripcion: "Monitoreo continuo" },
-            { titulo: "Frenado de emergencia", descripcion: "Respuesta inmediata" }
+            { titulo: "Sistemas ABS", descripcion: "Detección precisa de velocidad de rueda para frenado seguro" },
+            { titulo: "Control de tracción", descripcion: "Monitoreo continuo para optimización de adherencia" },
+            { titulo: "Frenado de emergencia", descripcion: "Respuesta inmediata en situaciones críticas" }
         ]
     },
     motor: {
-        titulo: "MOTOR ELÉCTRICO",
-        descripcion: "Fabricamos módulos electrónicos con microprocesador automotriz para gestionar funciones de motor, transmisión y otros sistemas auxiliares en vehículos.",
+        titulo: "MÓDULO ELECTRÓNICO",
+        descripcion: "Unidades de control electrónico avanzadas para gestión de sistemas vehiculares con tecnología de punta",
         imagen: "img/modulo.jpg",
         especificaciones: [
-            { titulo: "Procesador", descripcion: "Microcontrolador 32-bit automotriz" },
-            { titulo: "Memoria", descripcion: "EEPROM + Flash interna" },
-            { titulo: "Voltaje de Operacion", descripcion: "12 V DC" },
-            { titulo: "Carcasa", descripcion: "Aluminio resistente a vibraciones y corrosión" },
-            { titulo: "Temperatura de operacion", descripcion: "-40 °C a 125 °C" },
-            { titulo: "Conectores", descripcion: "24 a 64 pines según modelo" },
-            { titulo: "Proteccion", descripcion: "Alta resistencia a vibraciones y humedad" },
-            { titulo: "Vida util estimada", descripcion: "Soporta > 150,000 km de operación" }
+            { titulo: "Procesador", descripcion: "Microcontrolador 32-bit automotriz", icono: "fas fa-microchip" },
+            { titulo: "Memoria", descripcion: "EEPROM + Flash interna expandible", icono: "fas fa-memory" },
+            { titulo: "Voltaje de Operación", descripcion: "12 V DC con protección contra picos", icono: "fas fa-bolt" },
+            { titulo: "Carcasa", descripcion: "Aluminio resistente a vibraciones y corrosión", icono: "fas fa-shield-alt" },
+            { titulo: "Temperatura de operación", descripcion: "-40 °C a 125 °C", icono: "fas fa-thermometer-three-quarters" },
+            { titulo: "Conectores", descripcion: "24 a 64 pines según modelo y aplicación", icono: "fas fa-network-wired" },
+            { titulo: "Protección", descripcion: "Alta resistencia a vibraciones, humedad y EMI", icono: "fas fa-hard-hat" },
+            { titulo: "Vida útil estimada", descripcion: "Soporta > 150,000 km de operación continua", icono: "fas fa-road" }
         ],
         aplicaciones: [
-            { titulo: "Vehículos Eléctricos", descripcion: "Propulsión principal" },
-            { titulo: "Híbridos", descripcion: "Sistemas de asistencia" },
-            { titulo: "Autobuses", descripcion: "Transporte público eléctrico" }
+            { titulo: "Vehículos Eléctricos", descripcion: "Control de propulsión principal y sistemas de energía" },
+            { titulo: "Híbridos", descripcion: "Gestión de sistemas de asistencia y transición potencia" },
+            { titulo: "Autobuses Urbanos", descripcion: "Control integral para transporte público eléctrico" }
         ]
     }
 };
 
-// Función para cargar el contenido del producto
+// Función para cargar el contenido del producto - MEJORADA
 function cargarProducto(productoId) {
     const producto = productosData[productoId];
     const contenido = document.getElementById('contenido-producto');
     
     contenido.innerHTML = `
-        <!-- Qué Ofrecemos -->
-        <section class="que-ofrecemos">
+        <section class="producto-detalle">
             <div class="container">
-                <h2>QUE OFRECEMOS</h2>
-                <p>${producto.descripcion}</p>
-            </div>
-        </section>
+                <!-- Hero del Producto -->
+                <div class="hero-producto">
+                    <h2><i class="fas fa-star"></i> ${producto.titulo}</h2>
+                    <p>${producto.descripcion}</p>
+                </div>
 
-        <!-- Imagen Producto -->
-        <section class="producto-imagen">
-            <div class="container">
-                <img src="${producto.imagen}" alt="${producto.titulo}" class="producto-img">
-            </div>
-        </section>
+                <!-- Imagen del Producto -->
+                <div class="imagen-producto-container">
+                    <img src="${producto.imagen}" alt="${producto.titulo}" class="imagen-producto">
+                </div>
 
-        <!-- Producto - Especificaciones -->
-        <section class="producto-especificaciones">
-            <div class="container">
-                <h2>PRODUCTO</h2>
-                <div class="espec-grid">
+                <!-- Especificaciones Técnicas -->
+                <h2 style="text-align: center; margin-bottom: 3rem; color: var(--primary-blue);">
+                    <i class="fas fa-clipboard-list"></i> Especificaciones Técnicas
+                </h2>
+                <div class="especificaciones-grid">
                     ${producto.especificaciones.map(espec => `
-                        <div class="espec-item">
-                            <h3>${espec.titulo}</h3>
+                        <div class="espec-card">
+                            <h3><i class="${espec.icono}"></i> ${espec.titulo}</h3>
                             <p>${espec.descripcion}</p>
                         </div>
                     `).join('')}
                 </div>
-            </div>
-        </section>
 
-        <!-- Aplicaciones -->
-        <section class="aplicaciones">
-            <div class="container">
-                <h2>APLICACIONES</h2>
-                <div class="apli-grid">
+                <!-- Aplicaciones -->
+                <h2 style="text-align: center; margin-bottom: 3rem; color: var(--primary-blue);">
+                    <i class="fas fa-cogs"></i> Aplicaciones Principales
+                </h2>
+                <div class="aplicaciones-grid">
                     ${producto.aplicaciones.map(apli => `
                         <div class="apli-card">
                             <h3>${apli.titulo}</h3>
@@ -117,14 +113,14 @@ function cargarProducto(productoId) {
         <section class="producto-cta">
             <div class="container">
                 <h2>¿Interesado en nuestros ${producto.titulo.toLowerCase()}?</h2>
-                <p>Contáctanos para una cotización personalizada</p>
-                <button class="cta-button">Solicitar Cotización</button>
+                <p>Contáctanos para una cotización personalizada y especificaciones detalladas</p>
+                <button class="cta-button">Solicitar Cotización <i class="fas fa-arrow-right"></i></button>
             </div>
         </section>
     `;
 
     // Actualizar estado activo de las cards
-    document.querySelectorAll('.producto-card').forEach(card => {
+    document.querySelectorAll('.selector-card').forEach(card => {
         card.classList.remove('active');
     });
     document.querySelector(`[data-producto="${productoId}"]`).classList.add('active');
@@ -150,7 +146,7 @@ function aplicarAnimaciones() {
     }, observerOptions);
 
     // Aplicar animación a las especificaciones
-    document.querySelectorAll('.espec-item').forEach(item => {
+    document.querySelectorAll('.espec-card').forEach(item => {
         item.style.opacity = '0';
         item.style.transform = 'translateY(20px)';
         item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -166,13 +162,13 @@ function aplicarAnimaciones() {
     });
 }
 
-// Event Listeners
+// Event Listeners - ACTUALIZADO
 document.addEventListener('DOMContentLoaded', function() {
     // Cargar el primer producto por defecto
     cargarProducto('arnes');
 
     // Event listeners para las cards de productos
-    document.querySelectorAll('.producto-card').forEach(card => {
+    document.querySelectorAll('.selector-card').forEach(card => {
         card.addEventListener('click', function() {
             const productoId = this.getAttribute('data-producto');
             cargarProducto(productoId);
@@ -213,7 +209,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para el botón de cotización
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('cta-button')) {
-            alert('Serás redirigido a nuestro formulario de contacto para solicitar una cotización.');
+            alert('Serás redirigido a nuestro formulario de contacto para solicitar una cotización personalizada.');
+            // Aquí puedes redirigir al formulario de contacto
+            // window.location.href = 'index.html#contacto';
         }
     });
 });

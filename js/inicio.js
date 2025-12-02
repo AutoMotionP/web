@@ -63,3 +63,43 @@ document.querySelectorAll('.servicio-card').forEach(card => {
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(card);
 });
+
+// Animación SIN las líneas rojas
+function animarHistoriaSimple() {
+    const historiaImg = document.querySelector('.historia-imagen');
+    const historiaText = document.querySelector('.historia-texto');
+    
+    if (historiaImg && historiaText) {
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Solo animación básica para imagen
+                    historiaImg.style.opacity = '1';
+                    historiaImg.style.transform = 'translateX(0)';
+                    
+                    // Animación simple para texto
+                    const paragraphs = historiaText.querySelectorAll('p');
+                    paragraphs.forEach((p, index) => {
+                        setTimeout(() => {
+                            p.style.opacity = '1';
+                            p.style.transform = 'translateX(0)';
+                        }, index * 150);
+                    });
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        // Estilos iniciales simples
+        historiaImg.style.opacity = '0';
+        historiaImg.style.transform = 'translateX(-30px)';
+        historiaImg.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        
+        historiaText.querySelectorAll('p').forEach(p => {
+            p.style.opacity = '0';
+            p.style.transform = 'translateX(20px)';
+            p.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        observer.observe(historiaImg);
+    }
+}
