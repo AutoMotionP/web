@@ -198,7 +198,7 @@ nav {
     width: 70%;
 }
 
-/* Para el enlace activo (si quieres resaltar la página actual) */
+/* Para el enlace activoa (si quieres resaltar la página actual) */
 .nav-links > li > a.active {
     color: var(--accent-red);
     background: rgba(229, 62, 62, 0.1);
