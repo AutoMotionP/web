@@ -186,7 +186,7 @@ nav {
 
 /* Hero Industria 4.0 */
 .industria-hero {
-    background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('../img/industria-fondo.jpg');
+    background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('../img/fondo4.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1299,6 +1299,7 @@ footer p:last-child {
         height: 180px;
     }
 }
+
 
 body {
     zoom: 0.89;
