@@ -10,20 +10,48 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <h2>AutoMotion Parts</h2>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="envase.html">Envase</a></li>
-                <li><a href="cubicaje.html">Cubicaje</a></li>
-                <li><a href="logisitica.html">Logística</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo">
+            <h2>AutoMotion Parts</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            
+            <!-- Submenú Productos -->
+            <li class="has-submenu">
+                <a href="productos.html">Catalogo <i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="envase.html">Packaging</a></li>
+                    <li><a href="cubicaje.html">Cubicaje</a></li>
+                </ul>
+            </li>
+            
+            <!-- Submenú Logística -->
+            <li class="has-submenu">
+                <a href="logistica.html">Logística <i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="logintegral.html">Logística Integral</a></li>
+                    <li><a href="cadena.html">Cadena de Suministros</a></li>
+                    <li><a href="costos.html">Costos Logísticos</a></li>
+                    <li><a href="logisitica.html">Logística</a></li>
+                </ul>
+            </li>
+            
+            <!-- Submenú Innovación -->
+            <li class="has-submenu">
+                <a href="4.0.html">Innovación <i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="4.0.html">Industria 4.0</a></li>
+                    <li><a href="modelo.html">Modelo Vogel</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="servicio.html">Servicio</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
 
     <!-- Hero Envase CON FONDO -->
     <section class="envase-hero">
@@ -251,5 +279,6 @@
     </footer>
 
     <script src="js/envase.js"></script>
+    <script src="js/todos.js"></script>
 </body>
 </html>

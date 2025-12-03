@@ -38,7 +38,7 @@ body {
     padding: 0 2rem;
 }
 
-/* Header Moderno */
+/* HEADER PARA DESKTOP - OPTIMIZADO */
 header {
     background: rgba(26, 54, 93, 0.95);
     backdrop-filter: blur(10px);
@@ -48,14 +48,13 @@ header {
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px; /* Un poco más ancho para más espacio */
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -64,40 +63,129 @@ nav {
     color: var(--white);
     font-size: 1.8rem;
     font-weight: 700;
-    letter-spacing: -0.5px;
     background: linear-gradient(135deg, #fff 0%, #cbd5e0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
+/* NAV LINKS PRINCIPAL - DESKTOP */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 0.8rem; /* Espacio más compacto */
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links a {
+.nav-links > li > a {
     color: var(--white);
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.95rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
     border-radius: 8px;
     transition: all 0.3s ease;
     position: relative;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.nav-links a:hover {
+.nav-links > li > a:hover {
     color: var(--accent-red);
     background: rgba(255, 255, 255, 0.1);
 }
 
-.nav-links a::after {
+.nav-links > li > a i {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.has-submenu:hover > a i {
+    transform: rotate(180deg);
+}
+
+/* SUBMENÚS - DESKTOP */
+.has-submenu {
+    position: relative;
+}
+
+.has-submenu .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 220px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    z-index: 1001;
+    padding: 0.5rem 0;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.has-submenu .submenu li {
+    display: block;
+    margin: 0;
+}
+
+.has-submenu .submenu a {
+    color: var(--text-dark);
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #f0f0f0;
+    display: block;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.has-submenu .submenu a:hover {
+    background: var(--light-bg);
+    color: var(--accent-red);
+    padding-left: 1.5rem;
+}
+
+.has-submenu .submenu li:last-child a {
+    border-bottom: none;
+}
+
+/* Mostrar submenú al hover */
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+/* Flecha indicadora del submenú */
+.has-submenu .submenu::before {
     content: '';
     position: absolute;
-    bottom: -5px;
+    top: -8px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--white);
+}
+
+/* Línea inferior en hover (opcional) */
+.nav-links > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
     left: 50%;
     width: 0;
     height: 2px;
@@ -106,8 +194,38 @@ nav {
     transform: translateX(-50%);
 }
 
-.nav-links a:hover::after {
-    width: 80%;
+.nav-links > li > a:hover::after {
+    width: 70%;
+}
+
+/* Para el enlace activo (si quieres resaltar la página actual) */
+.nav-links > li > a.active {
+    color: var(--accent-red);
+    background: rgba(229, 62, 62, 0.1);
+}
+
+.nav-links > li > a.active::after {
+    width: 70%;
+}
+
+/* CSS para complementar el JS */
+.has-submenu .submenu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links > li > a {
+    transition: all 0.3s ease;
+}
+
+/* Para el efecto de scroll */
+header {
+    transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* Para el resaltado activo */
+.nav-links > li > a.active-submenu {
+    color: var(--accent-red) !important;
+    background: rgba(229, 62, 62, 0.1) !important;
 }
 
 /* Hero Section Moderna */
